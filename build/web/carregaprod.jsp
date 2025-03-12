@@ -38,22 +38,22 @@
         <form method="post" action="alterar_produtos.jsp">
             <p>
                 <label for="codigo">Código:</label>
-                <input type="number" name="codigo" id="codigo" value="<%=resultado.getString("codigo")%>" readonly>;
+                <input type="number" name="codigo" id="codigo" value="<%=resultado.getString("codigo")%>" readonly>
             </p>
             <p>
                 <label for="nome">Nome do Produto:</label>
-                <input type="text" name="nome" id="nome" value="<%=resultado.getString("nome")%>">;
+                <input type="text" name="nome" id="nome" value="<%=resultado.getString("nome")%>">
             </p>
             <p>
                 <label for="marca">Marca:</label>
-                <input type="text" name="marca" id="marca" value="<%=resultado.getString("marca")%>">;
+                <input type="text" name="marca" id="marca" value="<%=resultado.getString("marca")%>">
             </p>
             <p>
                 <label for="preco">Preço:</label>
-                <input type="number" name="preco" id="preco" value="<%=resultado.getString("preco")%>">;
+                <input type="number" name="preco" id="preco" value="<%=resultado.getString("preco")%>">
             </p>
             <p>
-                <input type="submit" value="Salvar Alterações">;
+                <input type="submit" value="Salvar Alterações">
             </p>
         </form>
         <%
