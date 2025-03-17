@@ -1,9 +1,16 @@
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.sql.ResultSet"%>
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Consulta</title>
+        <link rel="stylesheet" href="tabela.css">
     </head>
     <body>
         <%
@@ -19,7 +26,7 @@
             Class.forName("com.mysql.cj.jdbc.Driver");
             
             String url="jdbc:mysql://localhost:3306/bancojsp";
-            Strng user="root";
+            String user="root";
             String password="root";
             
             conecta=DriverManager.getConnection(url,user,password);
@@ -46,22 +53,22 @@
                 <th>Valor</th>
             </tr>
             <%
-                while(rs.next())
+                while(rs.next()){
             %>
             <!--finalizamos o código java acima e agora vamos criar uma tabela html
             para mostrar os dados recuperados do banco de dados-->
             <tr>
                 <td>
-                    <% =rs.getString("código")%>
+                    <%=rs.getString("codigo")%>
                 </td>
                 <td>
-                    <% =rs.getString("nome")%>
+                    <%=rs.getString("nome")%>
                 </td>
                 <td>
-                    <% =rs.getString("marca")%>
+                    <%=rs.getString("marca")%>
                 </td>
                 <td>
-                    <% =rs.getString("valor")%>
+                    <%=rs.getString("preco")%>
                 </td>
             </tr>
             <%
@@ -70,7 +77,7 @@
         </table>
             <%
                 }catch (Exception x){
-                    out.print("Mensagem de erro: " + x.getMenssage());
+                    out.print("Mensagem de erro: " + x.getMessage());
                 }
             %>
     </body>

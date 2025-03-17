@@ -8,6 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listagem de Produtos</title>
+        <link rel="stylesheet" href="tabela.css">
     </head>
     <body>
         <% try{
@@ -32,6 +33,7 @@
                 <th>Nome</th>
                 <th>Marca</th>
                 <th>Preço</th>
+                <th>Exclusão</th>
             </tr>
             <%
                 while (rs.next()){
@@ -49,6 +51,9 @@
                 </td>
                 <td>
                     <%=rs.getString("preco")%>
+                </td>
+                <td>
+                    <a href="excpro.jsp?codigo=<%= rs.getString("codigo") %>">Excluir</a>
                 </td>
             </tr>
             <%
